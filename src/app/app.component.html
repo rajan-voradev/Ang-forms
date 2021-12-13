@@ -1,76 +1,79 @@
-<form #contactForm="ngForm" (ngSubmit)="onSubmit()">
- 
-  <p>
-    <label for="firstname">First Name </label>
-    <input type="text" id="firstname" name="firstname" ngModel>
-  </p>
- 
-  <p>
-    <label for="lastname">Last Name </label>
-    <input type="text" id="lastname" name="lastname" ngModel>
-  </p>
- 
-  <p>
-    <label for="email">Email </label>
-    <input type="text" id="email" name="email"  ngModel>
-  </p>
- 
-  <p>
-    <label for="gender">Geneder </label>
-    <input type="radio" value="male" id="gender" name="gender" ngModel> Male
-    <input type="radio" value="female" id="gender" name="gender" ngModel> Female
-  </p>
- 
-  <p>
-    <label for="isMarried">Married </label>
-    <input type="checkbox" id="isMarried" name="isMarried" ngModel>
-  </p>
- 
-  <p>
-    <label for="country">country </label>
- 
-    <select id="country" name="country" ngModel>
-      <option [ngValue]="c.id" *ngFor="let c of countryList">
-        {{c.name}}
-      </option>
-    </select>
- 
-  </p>
- 
-  <div ngModelGroup="address">
- 
+<div class="container form-group" style="margin-top: 70px">
+  <h3>Set Value in a Form</h3>
+  <form #contactForm="ngForm" (ngSubmit)="onSubmit()">
+
     <p>
-      <label for="city">City</label>
-      <input type="text" id="city" name="city" ngModel>
+      <label for="firstname">First Name </label>
+      <input class="form-control" type="text" id="firstname" name="firstname" ngModel>
     </p>
- 
+
     <p>
-      <label for="street">Street</label>
-      <input type="text" id="street" name="street" ngModel>
+      <label for="lastname">Last Name </label>
+      <input class="form-control" type="text" id="lastname" name="lastname" ngModel>
     </p>
+
     <p>
-      <label for="pincode">Pin Code</label>
-      <input type="text" id="pincode" name="pincode"  ngModel>
+      <label for="email">Email </label>
+      <input class="form-control" type="text" id="email" name="email" ngModel>
     </p>
- 
-  </div>
- 
-  <p>
-    <button type="submit">Submit</button>
-  </p>
- 
-  <p>
-    <button type="button" (click)="changeCountry()">Change Country</button>
-    <button type="button" (click)="setDefaults()">Set Defaults</button>
-    <button type="button" (click)="patchValue()">Patch Value</button>
-    <button type="button" (click)="changeAddress()">Change Address</button>
-    <button type="button" (click)="reset()">Reset</button>
-    <button type="button" (click)="resetForm()">Reset Form</button>
-  </p>
- 
-  <b>valid</b> {{contactForm.valid}} 
-  <b>touched</b> {{contactForm.touched}} 
-  <b>pristine</b> {{contactForm.pristine}} 
-  <b>dirty</b> {{contactForm.dirty}} 
- 
-</form>
+
+    <p>
+      <label for="gender">Gender:&nbsp;</label>
+      <input class="form-control-input" type="radio" value="male" id="gender" name="gender" ngModel> Male
+      <input class="form-control-input" type="radio" value="female" id="gender" name="gender" ngModel> Female
+    </p>
+
+    <p>
+      <label for="isMarried">Married:&nbsp;</label>
+      <input class="form-control-input" type="checkbox" id="isMarried" name="isMarried" ngModel>
+    </p>
+
+    <p>
+      <label for="country">country:&nbsp;</label>
+
+      <select class="form-control" id="country" name="country" ngModel>
+        <option [ngValue]="c.id" *ngFor="let c of countryList">
+          {{c.name}}
+        </option>
+      </select>
+
+    </p>
+
+    <div ngModelGroup="address">
+
+      <p>
+        <label for="city">City</label>
+        <input class="form-control" type="text" id="city" name="city" ngModel>
+      </p>
+
+      <p>
+        <label for="street">Street</label>
+        <input class="form-control" type="text" id="street" name="street" ngModel>
+      </p>
+      <p>
+        <label for="pincode">Pin Code</label>
+        <input class="form-control" type="text" id="pincode" name="pincode" ngModel>
+      </p>
+
+    </div>
+
+    <p>
+      <button type="submit" class="btn btn-primary">Submit</button>
+    </p>
+
+    <p>
+      <button type="button" class="btn btn-success" (click)="changeCountry()">Change Country</button>&nbsp;
+      <button type="button" class="btn btn-success" (click)="setDefaults()">Set Defaults</button>&nbsp;
+      <button type="button" class="btn btn-success" (click)="patchValue()">Patch Value</button><br>
+      <button type="button" class="btn btn-danger" (click)="changeAddress()">Change Address</button>&nbsp;
+      <button type="button" class="btn btn-danger" (click)="reset()">Reset</button>&nbsp;
+      <button type="button" class="btn btn-danger" (click)="resetForm()">Reset Form</button>
+    </p>
+
+    <b>valid</b> {{contactForm.valid}}
+    <b>touched</b> {{contactForm.touched}}
+    <b>pristine</b> {{contactForm.pristine}}
+    <b>dirty</b> {{contactForm.dirty}}
+
+  </form>
+</div>
